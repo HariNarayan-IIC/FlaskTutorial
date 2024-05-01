@@ -15,11 +15,23 @@
     </head>
     <body margin = "">
         <div id="container">
-            <h1 margin-bottom: 40px>Hello Flask</h1>
+            <h1 margin-bottom: 40px>Image processing</h1>
 
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque corporis consequatur minus, tempore, modi eaque excepturi, nesciunt officiis assumenda quidem consequuntur odio ipsum dolore veritatis earum. Explicabo deleniti maxime consequatur?
-            </p>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*">
+                <button type="submit">Upload</button>
+            </form>
+
+            {% if original_image_base64 %}
+                <h2>Original Image</h2>
+                <img src="data:image/jpeg;base64,{{ original_image_base64 }}" alt="Original Image">
+            {% endif %}
+
+            {% if processed_image_base64 %}
+                <h2>Processed Image</h2>
+                <img src="data:image/jpeg;base64,{{ processed_image_base64 }}" alt="Processed Image">
+            {% endif %}
+
         </div>
         
     </body>
