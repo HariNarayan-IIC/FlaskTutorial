@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import cv2
 import numpy as np
 import os
@@ -45,7 +45,7 @@ def upload():
     # Cleanup: Remove the uploaded image file from disk
     os.remove(image_path)
 
-    return render_template('index.html', original_image_base64=original_image_base64, processed_image_base64=processed_image_base64)
+    return render_template('home.html', original_image_base64=original_image_base64, processed_image_base64=processed_image_base64)
 
 
 if __name__ == "__main__":
