@@ -23,9 +23,15 @@
             <h1 style="padding: 40px;">Image processing</h1>
 
             <form action="/upload" method="post" enctype="multipart/form-data">
-                <div class= "row">
-                    <input class="form-control form-control-lg col" type="file" name="image" accept="image/*">
-                    <button class="btn btn-outline-success btn-lg col-3" type="submit">Upload</button>
+                <div>
+                    <input class="form-control" type="file" name="image" accept="image/*">
+                    <select class="form-select" name="processing_method">
+                        <option value="grayscale">Grayscale</option>
+                        <option value="sharpen">Sharpen</option>
+                        <option value="blur">Blur</option>
+                        <!-- Add more options for other processing methods -->
+                    </select>
+                    <button class="btn btn-outline-success" type="submit">Apply</button>
                 </div>
             </form>
 
